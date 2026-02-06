@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do you love me?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Comic Sans MS", cursive;
+      background: #fff;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    img {
+      width: 220px;
+    }
+
+    h1 {
+      color: #444;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background-color: #ff5c8a;
+      color: white;
+    }
+
+    #no {
+      background-color: #ccc;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="main">
+    <img src="https://i.imgur.com/2F4hF5M.png" alt="bear">
+    <h1>Do you love me? 💕</h1>
+    <div class="buttons">
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const main = document.getElementById("main");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    yesBtn.addEventListener("click", () => {
+      main.innerHTML = `
+       <img src="https://tenor.com/view/do-you-love-me-bear-cute-love-gif-26353632" alt="Cute Cat Hug I Love You GIF" 
+     style="width:300px; height:auto;">
+        <h1>I knew it 😍💖</h1>
+      `;
+    });
+  </script>
+
+</body>
+</html>
